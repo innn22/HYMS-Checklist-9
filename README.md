@@ -140,11 +140,11 @@
     const PLACEHOLDER_THUMB = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="192" height="144"><rect width="100%" height="100%" fill="%23eef2f7"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%2399a">참고사진</text></svg>';
 
     const checklistTemplate = [
-      { key:'rear_cam',       label:'후방감시카메라',     method:'후방 감시카메라는 상시 전원이 켜져있고 모니터 등 작동에 문제가 없을 것,<br>후사경은 정상 부착되고 후진 경보장치는 정상적으로 작동될 것', refImg:'후방.png'  },
-      { key:'controls_brake', label:'조종장치,<br>제동장치', method:'조종장치, 클러치, 브레이크 등은 정상작동되고 좌석안전띠가 부착될 것',             refImg: '조종장치.png' },
+      { key:'rear_cam',       label:'후방감시카메라',     method:'후방카메라의 전원상태, 모니터 등 작동에 문제가 없을 것,<br>후사경은 정상 부착되고 후진 경보장치는 정상적으로 작동될 것', refImg:'후방.png'  },
+      { key:'controls_brake', label:'조종장치,<br>제동장치', method:'조종장치, 클러치, 브레이크 등은 정상작동되고 좌석안전띠가 부착될 것',             refImg: '조종장치.jpg' },
       { key:'hydraulic_cyl',  label:'유압장치<br>및 실린더', method:'유압모터ㆍ실린더ㆍ배관 등에 누유 및 손상, 마모 등이 없을 것',                     refImg:'유압.png' },
       { key:'tire',           label:'차륜(타이어)',       method:'차륜(타이어)의 균열 및 변형이 없고, 체결상태가 양호할 것',                         refImg:'차륜.png'},
-      { key:'fork_handling',  label:'포크 (하역장치)',     method:'변형 및 균열이 없고, 고정핀은 견고하게 체결되어 있을 것',                          refImg:'포크.jpg' },
+      { key:'fork_handling',  label:'포크 (하역장치)',     method:'변형 및 균열이 없고, 고정핀은 견고하게 체결되어 있을 것',                          refImg:'포크.png' },
       { key:'lamps',          label:'각종 등화류',        method:'전조ㆍ후미ㆍ방향지시ㆍ경보등의 기능은 정상작동 될 것',                               refImg: '등화류.png' },
       { key:'extinguisher',   label:'소화기',             method:'소화기(거치대포함)가 설치되어 있을 것, 사용연수가 지나지 않았는지 확인할 것',        refImg: '소화기.jpg' },
       { key:'etc',            label:'기타',               method:'승강용 발판상태, 타이어 타이거 마크 표시 확인할 것',                              refImg: '타이거.png' }
