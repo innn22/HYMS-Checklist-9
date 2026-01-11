@@ -156,7 +156,7 @@
       const p = new URLSearchParams(location.search), now=new Date();
       state.date = p.get('date') || new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16);
       state.org = p.get('org')||''; state.site=p.get('site')||''; state.inspector=p.get('inspector')||'';
-      state.equip=p.get('equip')||'사이드카카'; state.equipId=p.get('equipId')||''; const lbl=p.get('siteLabel'); if(lbl) $('siteLabel').textContent=lbl;
+      state.equip=p.get('equip')||'사이드카'; state.equipId=p.get('equipId')||''; const lbl=p.get('siteLabel'); if(lbl) $('siteLabel').textContent=lbl;
     }
 
     function applySelection(key){
