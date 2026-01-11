@@ -173,11 +173,11 @@
       checklistTemplate.forEach((row,i)=>{
         const tr=document.createElement('tr');
         tr.innerHTML = '<td class="col-no">'+(i+1)+'</td>'+
-          '<td class="col-item"><div class="itemcell">'+ (row.key === 'etc' 
-  ? '' 
-  :
-          '<img class="thumb" src="'+row.refImg+'" alt="'+row.label+'" data-full="'+row.refImg+'">'+
-          '<div class="itemtext"><div class="label">'+row.label+'</div></div></div></td>'+
+'<td class="col-item"><div class="itemcell">'+
+(row.key === 'etc'
+  ? ''
+  : '<img class="thumb" src="'+row.refImg+'" alt="'+row.label+'" data-full="'+row.refImg+'">') +
+'<div class="itemtext"><div class="label">'+row.label+'</div></div></div></td>'+
           '<td class="col-method"><div class="method">'+row.method+'</div></td>'+
           '<td class="col-opt"><button class="opt-btn ok" data-key="'+row.key+'" data-val="양호">양호</button></td>'+
           '<td class="col-opt"><button class="opt-btn bad" data-key="'+row.key+'" data-val="불량">불량</button></td>';
