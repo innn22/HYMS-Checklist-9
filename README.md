@@ -75,7 +75,7 @@
           <div class="row"><label for="org">소속</label><input id="org" type="text" placeholder="예) 생산1팀" /></div>
           <div class="row"><label for="site" id="siteLabel">점검 장소</label><input id="site" type="text" placeholder="예) 2공장 A라인" /></div>
           <div class="row"><label for="inspector">점검자</label><input id="inspector" type="text" placeholder="성명" /></div>
-          <div class="row"><label for="equip">장비 구분</label><input id="equip" type="text" value="지게차" /></div>
+          <div class="row"><label for="equip">장비 구분</label><input id="equip" type="text" value="사이드카" /></div>
           <div class="row"><label for="equipId">장비 ID/번호</label><input id="equipId" type="text" placeholder="예) FLT-01" /></div>
         </div>
       </section>
@@ -173,7 +173,9 @@
       checklistTemplate.forEach((row,i)=>{
         const tr=document.createElement('tr');
         tr.innerHTML = '<td class="col-no">'+(i+1)+'</td>'+
-          '<td class="col-item"><div class="itemcell">'+
+          '<td class="col-item"><div class="itemcell">'+ (row.key === 'etc' 
+  ? '' 
+  :
           '<img class="thumb" src="'+row.refImg+'" alt="'+row.label+'" data-full="'+row.refImg+'">'+
           '<div class="itemtext"><div class="label">'+row.label+'</div></div></div></td>'+
           '<td class="col-method"><div class="method">'+row.method+'</div></td>'+
