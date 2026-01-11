@@ -150,13 +150,13 @@
       { key:'etc',            label:'기타',               method:'승강용 발판상태, 타이어 타이거 마크 표시 확인할 것',        refImg: '기타.jpg'  }
     ];
 
-    const state = { date:'', org:'', site:'', inspector:'', equip:'지게차', equipId:'', checks:Object.fromEntries(checklistTemplate.map(i=>[i.key,''])), remarks:'', action:'' };
+    const state = { date:'', org:'', site:'', inspector:'', equip:'사이드카', equipId:'', checks:Object.fromEntries(checklistTemplate.map(i=>[i.key,''])), remarks:'', action:'' };
 
     function loadParams(){
       const p = new URLSearchParams(location.search), now=new Date();
       state.date = p.get('date') || new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16);
       state.org = p.get('org')||''; state.site=p.get('site')||''; state.inspector=p.get('inspector')||'';
-      state.equip=p.get('equip')||'지게차'; state.equipId=p.get('equipId')||''; const lbl=p.get('siteLabel'); if(lbl) $('siteLabel').textContent=lbl;
+      state.equip=p.get('equip')||'사이드카카'; state.equipId=p.get('equipId')||''; const lbl=p.get('siteLabel'); if(lbl) $('siteLabel').textContent=lbl;
     }
 
     function applySelection(key){
@@ -265,9 +265,9 @@ function closeLightbox(fromPopstate){
     function ensureHtml2Canvas(cb){ if(window.html2canvas){ cb(); return; } const diag=$('diag'); diag.style.display='inline'; diag.textContent='이미지 라이브러리 로딩 중...'; const srcs=['https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js','https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js','https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js']; (function load(i){ if(i>=srcs.length){ diag.textContent='이미지 로딩 실패'; return; } const s=document.createElement('script'); s.src=srcs[i]; s.onload=()=>{ diag.textContent=''; diag.style.display='none'; cb(); }; s.onerror=()=>load(i+1); document.head.appendChild(s); })(0); }
     function showBusy(msg){ const o=$('overlay'); o.style.display='flex'; o.querySelector('span').textContent=msg||'처리 중...'; }
     function hideBusy(){ $('overlay').style.display='none'; }
-    function downloadPNG(){ ensureHtml2Canvas(function(){ showBusy('이미지 준비 중...'); const el=$('capture'); const prev=el.style.backgroundColor; el.style.backgroundColor='#ffffff'; const scale=(window.devicePixelRatio>1)?2:1.5; html2canvas(el,{scale:scale,useCORS:true,backgroundColor:'#ffffff'}).then((canvas)=>{ const data=canvas.toDataURL('image/png'); const name='지게차_자가진단_'+(($('equipId').value)||'장비')+'_'+(($('date').value)||'').replace(/[:T]/g,'-')+'.png'; const a=document.createElement('a'); a.href=data; a.download=name; if(typeof a.download==='undefined'){ window.open(data,'_blank'); } else { document.body.appendChild(a); a.click(); a.remove(); } }).catch((e)=>alert('이미지 생성 실패: '+e.message)).finally(()=>{ el.style.backgroundColor=prev||''; hideBusy(); }); }); }
+    function downloadPNG(){ ensureHtml2Canvas(function(){ showBusy('이미지 준비 중...'); const el=$('capture'); const prev=el.style.backgroundColor; el.style.backgroundColor='#ffffff'; const scale=(window.devicePixelRatio>1)?2:1.5; html2canvas(el,{scale:scale,useCORS:true,backgroundColor:'#ffffff'}).then((canvas)=>{ const data=canvas.toDataURL('image/png'); const name='사이드카_자가진단_'+(($('equipId').value)||'장비')+'_'+(($('date').value)||'').replace(/[:T]/g,'-')+'.png'; const a=document.createElement('a'); a.href=data; a.download=name; if(typeof a.download==='undefined'){ window.open(data,'_blank'); } else { document.body.appendChild(a); a.click(); a.remove(); } }).catch((e)=>alert('이미지 생성 실패: '+e.message)).finally(()=>{ el.style.backgroundColor=prev||''; hideBusy(); }); }); }
 
-    function resetForm(){ const now=new Date(); state.date=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16); state.org=state.site=state.inspector=state.equipId=''; state.equip='지게차'; state.checks=Object.fromEntries(checklistTemplate.map(i=>[i.key,''])); state.remarks=state.action=''; renderTable(); }
+    function resetForm(){ const now=new Date(); state.date=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16); state.org=state.site=state.inspector=state.equipId=''; state.equip='사이드카'; state.checks=Object.fromEntries(checklistTemplate.map(i=>[i.key,''])); state.remarks=state.action=''; renderTable(); }
 
     function bindInputs(){ $('date').addEventListener('change', e=>state.date=e.target.value); $('org').addEventListener('input', e=>state.org=e.target.value); $('site').addEventListener('input', e=>state.site=e.target.value); $('inspector').addEventListener('input', e=>state.inspector=e.target.value); $('equip').addEventListener('input', e=>state.equip=e.target.value); $('equipId').addEventListener('input', e=>state.equipId=e.target.value); $('remarks').addEventListener('input', e=>state.remarks=e.target.value); $('action').addEventListener('input', e=>state.action=e.target.value); $('resetBtn').addEventListener('click', resetForm); $('pngBtn').addEventListener('click', downloadPNG); }
 
