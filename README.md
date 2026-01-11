@@ -147,7 +147,7 @@
       { key:'fork_handling',  label:'포크 (하역장치)',     method:'변형 및 균열이 없고, 고정핀은 견고하게 체결되어 있을 것',                          refImg:'포크.png' },
       { key:'lamps',          label:'각종 등화류',        method:'전조ㆍ후미ㆍ방향지시ㆍ경보등의 기능은 정상작동 될 것',                               refImg: '등화류.png' },
       { key:'extinguisher',   label:'소화기',             method:'소화기(거치대포함)가 설치되어 있을 것, 사용연수가 지나지 않았는지 확인할 것',        refImg: '소화기.jpg' },
-      { key:'etc',            label:'기타',               method:'승강용 발판상태, 타이어 타이거 마크 표시 확인할 것',                              refImg: '타이거.png' }
+      { key:'etc',            label:'기타',               method:'승강용 발판상태, 타이어 타이거 마크 표시 확인할 것' }
     ];
 
     const state = { date:'', org:'', site:'', inspector:'', equip:'지게차', equipId:'', checks:Object.fromEntries(checklistTemplate.map(i=>[i.key,''])), remarks:'', action:'' };
