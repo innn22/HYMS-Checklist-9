@@ -116,7 +116,7 @@
       </section>
     </div>
 
-    <div class="note" style="margin-top:12px">URL 예: <code>?equipId=FLT-01&site=2공장A라인&org=생산1팀&equip=지게차&siteLabel=설치장소</code></div>
+    <div class="note" style="margin-top:12px">URL 예: <code>?equipId=FLT-01&site=2공장A라인&org=생산1팀&equip=사이트카&siteLabel=설치장소</code></div>
   </div>
 
   <!-- 캡처용 바쁘다 오버레이 -->
