@@ -65,7 +65,11 @@
         <button id="resetBtn" class="btn">↺ 초기화</button>
       </div>
     </header>
-
+<div class="doc-info">
+  제정 : Rev.0 (2025.11.15)
+  <span style="margin:0 10px;">│</span>
+  개정 : -
+</div>
     <div id="capture">
       <!-- 기본 정보 -->
       <section class="card">
